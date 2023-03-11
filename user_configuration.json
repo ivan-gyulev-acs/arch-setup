@@ -1,0 +1,38 @@
+{
+    "additional-repositories": [
+        "multilib"
+    ],
+    "audio": "pipewire",
+    "bootloader": "grub-install",
+    "config_version": "2.5.3",
+    "debug": false,
+    "harddrives": [
+        "/dev/nvme0n1",
+        "/dev/sda"
+    ],
+    "nic": {
+        "dhcp": true,
+        "dns": null,
+        "gateway": null,
+        "iface": null,
+        "ip": null,
+        "type": "nm"
+    },
+    "no_pkg_lookups": false,
+    "offline": false,
+    "packages": [
+        "intel-ucode",
+        "nvidia",
+        "linux-headers",
+        "base-devel",
+        "git"
+    ],
+    "profile": {
+        "path": "/usr/lib/python3.10/site-packages/archinstall/profiles/minimal.py"
+    },
+    "script": "guided",
+    "silent": false,
+    "swap": true,
+    "timezone": "Europe/Sofia",
+    "version": "2.5.3"
+}
