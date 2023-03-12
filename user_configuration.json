@@ -34,7 +34,7 @@
     },
     "script": "guided",
     "silent": false,
-    "swap": true,
+    "swap": false,
     "timezone": "Europe/Sofia",
     "version": "2.5.3"
 }
