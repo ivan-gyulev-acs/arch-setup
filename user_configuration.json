@@ -23,8 +23,10 @@
     "packages": [
         "intel-ucode",
         "nvidia",
-        "linux-headers",
+        "base",
         "base-devel",
+        "linux-firmware",
+        "linux-headers",
         "git"
     ],
     "profile": {
