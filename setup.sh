@@ -21,8 +21,13 @@ sudo sed -i 's/Name=Caprine/Name=Messenger/' /usr/share/applications/caprine.des
 # change some gnome settings
 mv .config /home/ivan/
 
-# enable important services
-sudo systemctl enable NetworkManager
-sudo systemctl enable iwd
-sudo systemctl enable avahi-daemon
-sudo systemctl enable gdm
+# disable systemd's mdns
+sudo systemctl disable --now systemd-resolved
+
+# enable avahi's mdns
+sudo sed -i 's/hosts: mymachines/hosts: mymachines mds_minimal [NOTFOUND=return]/' /etc/nsswitch.conf
+sudo systemctl enable --now avahi-daemon
+
+
+# enable display manager
+sudo systemctl enable --now gdm
