@@ -8,8 +8,9 @@ rm -rf yay
 # install some wanted packages
 yay -S $(cat packages.txt)
 
-# change NetworkManager to use iwd
+# set iwd as NetworkManager's backend
 echo $'[device]\nwifi.backend=iwd' | sudo tee /etc/NetworkManager/conf.d/wifi_backend.conf
+sudo systemctl restart NetworkManager
 
 # remove grub startup menu
 sudo sed -i 's/GRUB_TIMEOUT=[1-9][1-9]*/GRUB_TIMEOUT=0\nGRUB_HIDDEN_TIMEOUT=0/' /etc/default/grub
