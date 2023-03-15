@@ -1,7 +1,7 @@
 # install yay
 git clone --depth=1 https://aur.archlinux.org/yay.git
 cd yay
-makepkg -i yay
+makepkg -si yay
 cd ..
 rm -rf yay
 
