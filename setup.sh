@@ -20,15 +20,10 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 sudo sed -i 's/Name=Caprine/Name=Messenger/' /usr/share/applications/caprine.desktop
 
 # change some gnome settings
-mv .config /home/ivan/
+cp .config /home/ivan/
 
-# disable systemd's mdns
-sudo systemctl disable --now systemd-resolved
-
-# enable avahi's mdns
+# enable mdns
 sudo sed -i 's/hosts: mymachines/hosts: mymachines mds_minimal [NOTFOUND=return]/' /etc/nsswitch.conf
-sudo systemctl enable --now avahi-daemon
-
 
 # enable display manager
 sudo systemctl enable --now gdm
